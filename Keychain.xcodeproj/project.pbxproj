@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		086D471325CBD16800C493B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086D471225CBD16800C493B4 /* Assets.xcassets */; };
 		086D471625CBD16800C493B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086D471525CBD16800C493B4 /* Preview Assets.xcassets */; };
 		086D471925CBD16800C493B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086D471725CBD16800C493B4 /* LaunchScreen.storyboard */; };
+		086D472425CBD1C900C493B4 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 086D472325CBD1C900C493B4 /* SwiftKeychainWrapper */; };
+		086D472725CBD1F700C493B4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D472625CBD1F700C493B4 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		086D471525CBD16800C493B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		086D471825CBD16800C493B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		086D471A25CBD16800C493B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		086D472625CBD1F700C493B4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086D472425CBD1C900C493B4 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,11 +60,10 @@
 		086D470B25CBD16500C493B4 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
+				086D472125CBD16D00C493B4 /* apputils */,
 				086D470C25CBD16500C493B4 /* AppDelegate.swift */,
 				086D470E25CBD16500C493B4 /* SceneDelegate.swift */,
 				086D471025CBD16500C493B4 /* ContentView.swift */,
-				086D471225CBD16800C493B4 /* Assets.xcassets */,
-				086D471725CBD16800C493B4 /* LaunchScreen.storyboard */,
 				086D471A25CBD16800C493B4 /* Info.plist */,
 				086D471425CBD16800C493B4 /* Preview Content */,
 			);
@@ -73,6 +76,16 @@
 				086D471525CBD16800C493B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		086D472125CBD16D00C493B4 /* apputils */ = {
+			isa = PBXGroup;
+			children = (
+				086D471725CBD16800C493B4 /* LaunchScreen.storyboard */,
+				086D471225CBD16800C493B4 /* Assets.xcassets */,
+				086D472625CBD1F700C493B4 /* Keychain.swift */,
+			);
+			path = apputils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +104,9 @@
 			dependencies = (
 			);
 			name = Keychain;
+			packageProductDependencies = (
+				086D472325CBD1C900C493B4 /* SwiftKeychainWrapper */,
+			);
 			productName = Keychain;
 			productReference = 086D470925CBD16500C493B4 /* Keychain.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +134,9 @@
 				Base,
 			);
 			mainGroup = 086D470025CBD16500C493B4;
+			packageReferences = (
+				086D472225CBD1C900C493B4 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = 086D470A25CBD16500C493B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086D470D25CBD16500C493B4 /* AppDelegate.swift in Sources */,
+				086D472725CBD1F700C493B4 /* Keychain.swift in Sources */,
 				086D470F25CBD16500C493B4 /* SceneDelegate.swift in Sources */,
 				086D471125CBD16500C493B4 /* ContentView.swift in Sources */,
 			);
@@ -345,6 +365,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		086D472225CBD1C900C493B4 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		086D472325CBD1C900C493B4 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 086D472225CBD1C900C493B4 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 086D470125CBD16500C493B4 /* Project object */;
 }

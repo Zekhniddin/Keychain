@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var keychain = Keychain()
+    
+    init() {
+        print(keychain.password)
+        keychain.password = "123456"
+        print(keychain.password)
+    }
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Text("Password: ") + Text(keychain.password).fontWeight(.medium)
     }
 }
 
